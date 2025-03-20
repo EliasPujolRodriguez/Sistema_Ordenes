@@ -19,9 +19,7 @@ class Connection():
             database = self.database,
                                     port = self.port                    
         ) 
-            
-        
-            
+
         return self.con
 
     
