@@ -6,18 +6,17 @@ from pathlib import Path
 import os
 from PIL import Image
 from Connection import Connection
-import UserRegister
+import UserRegister as UserRegister
 
 #Instancia de clase conexión
 conn = Connection("root", "localhost", "", "muebles", "3306")
 query = conn.dbConnect().cursor()
 
 def setWindow(window):
-     width = window.winfo_screenwidth()
-     height = window.winfo_screenheight()
-     x = (width - window.winfo_reqwidth()) // 2
-     y = (height - window.winfo_reqheight()) // 2
-     window.geometry(f"+{x}+{y}")
+    window.update()
+    w, h = window.maxsize()
+    window.wm_overrideredirect(True)
+    window.geometry(f'{w}x{h}+0+0')  
 
 def counter():
     #Se va a evaluar si ya hay registros de empresa
@@ -137,7 +136,6 @@ def createWindow():
     #Inicia componentes
     window = tk.Tk()
     window.title("Registro de datos de la empresa - Pre registro")
-    window.geometry("500x400")
     setWindow(window)
 
     #Componentes gráficos formulario subida información

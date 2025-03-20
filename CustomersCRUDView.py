@@ -6,7 +6,7 @@ from tkinter import messagebox
 from tkinter import * 
 from tkinter import filedialog
 import datetime
-import MainView, CustomerView, OrderRegisterView
+import MainView as MainView, CustomerView as CustomerView, OrderRegisterView as OrderRegisterView
 import re
 
 #Instancia de clase conexión
@@ -18,11 +18,10 @@ def setMainWindow():
     MainView.createWindow()
     
 def setWindow(window):
-     width = window.winfo_screenwidth()
-     height = window.winfo_screenheight()
-     x = (width - window.winfo_reqwidth()) // 2
-     y = (height - window.winfo_reqheight()) // 2
-     window.geometry(f"+{x}+{y}")
+    window.update()
+    w, h = window.maxsize()
+    window.wm_overrideredirect(True)
+    window.geometry(f'{w}x{h}+0+0')  
 
 def customersView():
      window.withdraw()
@@ -120,12 +119,13 @@ def udpData(): #Agregar productos a la orden de trabajo
         conn.dbConnect().commit()
         reset()
         tk.messagebox.showinfo(title="Operación realizada correctamente", message="Se ha actualizado la información del cliente correctamente")
-     
+        conn.dbConnect().cursor().close()
+        
 def reset(): #Reiniciar formulario
         phNumberText.delete(0, END)
         csNameInput.delete(0, END)
         
-def do_popup(event):
+def do_popup(event): #Lanzar método de menús al dar click derecho
     try:
         m.tk_popup(event.x_root, event.y_root)
     finally:
@@ -152,7 +152,6 @@ def createWindow():
     #Inicia componentes
     window = tk.Tk()
     window.title("Administración clientes")
-    window.geometry("500x400")
     setWindow(window)
     
     #Componentes gráficos

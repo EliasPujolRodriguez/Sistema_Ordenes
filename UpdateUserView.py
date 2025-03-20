@@ -3,7 +3,7 @@ import tkinter as tk
 from tkinter import messagebox
 from tkinter import * 
 from tkinter import filedialog
-import MainView
+import MainView as MainView
 from cryptography.fernet import Fernet
 
 #Instancia de clase conexión
@@ -20,7 +20,6 @@ def setWindow(window):
 def storeData():
     password_value = password_entry.get()
     username_value = username_entry.get()
-    
     key = Fernet.generate_key()
     refKey = Fernet(key)
     password_value = password_entry.get().encode()

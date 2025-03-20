@@ -33,6 +33,7 @@ def uploadFiles(): #Método que va a permitir subir un determinado archivo
                             values = (folderPath)
                             query.execute(sql, values)
                             conn.dbConnect().commit()
+                            conn.dbConnect().cursor().close()
                             tk.messagebox.showinfo(title="Operación realizada correctamente", message="Se ha subido el logo de la empresa")
                  elif extension != "jpg" or extension != "png":
                         tk.messagebox.showerror(title="Error", message="Solo se admite subir archivos en formato jpg o png")

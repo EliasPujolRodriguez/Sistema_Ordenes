@@ -10,7 +10,7 @@ from tkinter import filedialog
 import datetime
 from tkinter import *
 import os
-import MainView, OrderRegisterView, OrderRegisterView
+import MainView as MainView, OrderRegisterView as OrderRegisterView, OrderRegisterView as OrderRegisterView
 import re
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import letter
@@ -21,13 +21,11 @@ from reportlab.lib import colors
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.units import inch
 from reportlab.lib.styles import getSampleStyleSheet
-
-
 #Instancia de clase conexión
 conn = Connection("root", "localhost", "", "muebles", "3306")
 query = conn.dbConnect().cursor()
 
-def setMainWindow():
+def setMainWindow(): 
     window.withdraw()
     MainView.createWindow()
     
@@ -35,12 +33,11 @@ def setOrderCRUDWindow():
      window.withdraw()
      OrderRegisterView.createWindow()
      
-def setWindow(window):
-     width = window.winfo_screenwidth()
-     height = window.winfo_screenheight()
-     x = (width - window.winfo_reqwidth()) // 2
-     y = (height - window.winfo_reqheight()) // 2
-     window.geometry(f"+{x}+{y}")
+def setWindow(window): #Ajustar propiedades ventana
+    window.update()
+    w, h = window.maxsize()
+    window.wm_overrideredirect(True)
+    window.geometry(f'{w}x{h}+0+0')  
 
 def OrdersView():
      window.withdraw()
@@ -394,7 +391,6 @@ def createWindow():
     #Inicia componentes
     window = tk.Tk()
     window.title("Administración de ordenes de trabajo")
-    window.geometry("500x400")
     setWindow(window)
     
     #Componentes gráficos

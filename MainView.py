@@ -53,7 +53,7 @@ def createWindow():
     #Inicia componentes
     window = tk.Tk()
     window.title("Apartado principal")
-    window.geometry("500x400")
+    #window.geometry("500x400")
     setWindow(window)
     
     menubar = Menu(window)
@@ -67,7 +67,7 @@ def createWindow():
     configMenu.add_command(label="Editar Perfil usuario", command=configurationView)
     configMenu.add_command(label="Configuración datos empresa", command=configurationView2)
     logoutMenu = Menu(menubar, tearoff=0) 
-    logoutMenu.add_command(label="Salir", command=logout)
+    logoutMenu.add_command(label="Salir del sistema", command=logout)
     
     menubar.add_cascade(label="Clientes", menu=customerseMenu)
     menubar.add_cascade(label="Configuración", menu=configMenu)

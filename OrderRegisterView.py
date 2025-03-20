@@ -64,9 +64,7 @@ def selectCustomerOrder():
      tk.messagebox.showinfo(title="Operación realizada correctamente", message="Se ha asociado al cliente seleccionado con la orden de compra correctamente")
      conn.dbConnect().cursor().close()
      customerDetailView.config(text=f"Orden de trabajo asignada a {name}")
-
-
-
+     
 def replaceCustomerOrder():
     try:
        record = table.selection()[0]
@@ -215,7 +213,6 @@ def createWindow():
     #Inicia componentes
     window = tk.Tk()
     window.title("Registro de ordenes de trabajo")
-    window.geometry("500x400")
     setWindow(window)
     
     #Componentes gráficos

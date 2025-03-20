@@ -4,7 +4,7 @@ from tkinter import messagebox
 from tkinter import * 
 from tkinter import filedialog
 from datetime import date
-import MainView
+import MainView as MainView
 import re
 #Instancia de clase conexión
 conn = Connection("root", "localhost", "", "muebles", "3306")
@@ -72,7 +72,6 @@ def createWindow():
     #Inicia componentes
     window = tk.Tk()
     window.title("Registro de clientes")
-    window.geometry("500x400")
     setWindow(window)
 
     #Componentes gráficos formulario subida información

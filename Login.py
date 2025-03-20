@@ -6,7 +6,7 @@ from tkinter import filedialog
 import os
 from datetime import date
 from Connection import Connection
-import MainView
+import MainView as MainView
 
 #Instancia de clase conexión
 conn = Connection("root", "localhost", "", "muebles", "3306")
