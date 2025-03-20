@@ -51,6 +51,7 @@ def storeData():
         conn.dbConnect().commit()
         tk.messagebox.showinfo(title="Operación realizada correctamente", message="Se ha registrado al cliente correctamente")
         reset()
+        conn.dbConnect().cursor().close()
         
 def setMainWindow():
     window.withdraw()
@@ -61,11 +62,10 @@ def reset():
     customer_ph.delete(0, END)
 
 def setWindow(window):
-     width = window.winfo_screenwidth()
-     height = window.winfo_screenheight()
-     x = (width - window.winfo_reqwidth()) // 2
-     y = (height - window.winfo_reqheight()) // 2
-     window.geometry(f"+{x}+{y}")
+    window.update()
+    w, h = window.maxsize()
+    window.wm_overrideredirect(True)
+    window.geometry(f'{w}x{h}+0+0')  
      
 def createWindow():
     global window, customer_name_entry, customer_ph

@@ -6,7 +6,7 @@ from tkinter import messagebox
 from tkinter import * 
 from tkinter import filedialog
 import datetime
-import MainView, CustomerView, OrderRegisterView, OrderCRUD
+import MainView as MainView, CustomerView as CustomerView, OrderRegisterView as OrderRegisterView, OrderCRUD as OrderCRUD
 import re
 #Instancia de clase conexión
 conn = Connection("root", "localhost", "", "muebles", "3306")
@@ -17,11 +17,10 @@ def setMainWindow():
     MainView.createWindow()
     
 def setWindow(window):
-     width = window.winfo_screenwidth()
-     height = window.winfo_screenheight()
-     x = (width - window.winfo_reqwidth()) // 2
-     y = (height - window.winfo_reqheight()) // 2
-     window.geometry(f"+{x}+{y}")
+    window.update()
+    w, h = window.maxsize()
+    window.wm_overrideredirect(True)
+    window.geometry(f'{w}x{h}+0+0')  
 
 def customersView():
      window.withdraw()

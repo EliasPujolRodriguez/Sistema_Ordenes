@@ -1,7 +1,7 @@
 from Connection import Connection
-import RegisterForm
-import UserRegister
-import Login
+import RegisterForm as RegisterForm
+import UserRegister as UserRegister
+import Login as Login
 
 #Instancia de clase conexión
 conn = Connection("root", "localhost", "", "muebles", "3306")
@@ -22,6 +22,7 @@ for i in q:
 searchSql2 = "SELECT COUNT(IdUsuario) FROM usuarios;"
 query.execute(searchSql2)
 q2 = query.fetchall()
+conn.dbConnect().cursor().close()
 
 for i in q2:
          counterUsrEnterprise2 = i[0]

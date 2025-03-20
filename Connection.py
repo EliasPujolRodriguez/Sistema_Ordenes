@@ -11,8 +11,7 @@ class Connection():
         self.port = port
         self.con = None
         
-
-    def dbConnect(self):
+    def dbConnect(self): #Conexión con la base de datos
         if self.con is None:
             self.con = mysql.connector.connect(
                  user = self.usr,

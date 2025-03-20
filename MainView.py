@@ -3,7 +3,7 @@ import tkinter as tk
 from tkinter import messagebox
 from tkinter import * 
 from tkinter import filedialog
-import UpdateUserView, UpdateEnterprise, CustomerView, OrderRegisterView, CustomersCRUDView, OrderCRUD
+import UpdateUserView as UpdateUserView, UpdateEnterprise as UpdateEnterprise, CustomerView as CustomerView, OrderRegisterView as OrderRegisterView, CustomersCRUDView as CustomersCRUDView, OrderCRUD as OrderCRUD
 
 #Instancia de clase conexión
 conn = Connection("root", "localhost", "", "muebles", "3306")
