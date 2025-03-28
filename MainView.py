@@ -76,9 +76,11 @@ def createWindow():
     menubar.add_cascade(label="Clientes", menu=customerseMenu)
     menubar.add_cascade(label="Configuración", menu=configMenu)
     menubar.add_cascade(label="Cerrar sesión", menu=logoutMenu)
+    
+    oficialLogo = PhotoImage(file = r"..\\Sistema python\\Resources\Logo\\logo_principal.JPG", master=window) 
 
     #Componentes gráficos formulario
-    Label(window, text = 'Apartado principal', bg='#2A2A2A', fg="white", font=("Helvetica", 16) ).pack(side = TOP, pady = 10) 
+    Label(window, text = '', compound="center",  image = oficialLogo,  bg='#2A2A2A', fg="white", font=("Helvetica", 16) ).pack(side = TOP, pady = 10) 
     
     #Iconos botones
     iconAddCustomer = PhotoImage(file = r"..\Sistema python\Resources\Icons\add_customer.png", master=window) 
@@ -93,19 +95,19 @@ def createWindow():
     
     orderViewBtnMenu = tk.Button(window, relief="flat", borderwidth=0, text=" Registrar orden de trabajo", fg='White', bg='#2E5EA0', 
                 activebackground='White', compound="left", justify="left", image = iconAddOrder, command=orderView, font =('Helvetica', 14))
-    orderViewBtnMenu.pack(side = TOP, pady = 50) 
+    orderViewBtnMenu.pack(side = TOP, pady = 47) 
     
     updBtnMenu = tk.Button(window, relief="flat", borderwidth=0, text=" Actualizar sistema",  fg='White', bg='#2E5EA0', 
                 activebackground='White', compound="left", justify="left", image = iconConfig, command=updSystem, font =('Helvetica', 14))
-    updBtnMenu.pack(side = TOP, pady = 55) 
+    updBtnMenu.pack(side = TOP, pady = 48) 
     
     config1BtnMenu = tk.Button(window, relief="flat", borderwidth=0, text=" Editar perfil usuario", fg='White', bg='#2E5EA0', 
                 activebackground='White', compound="left", justify="left", image = iconUpdateProfile, command=configurationView, font =('Helvetica', 14) )
-    config1BtnMenu.pack(side = TOP, pady = 60) 
+    config1BtnMenu.pack(side = TOP, pady = 50) 
     
     config2BtnMenu = tk.Button(window, relief="flat", borderwidth=0, text=" Editar datos empresa", fg='White', bg='#2E5EA0', 
                 activebackground='White', compound="left", justify="left", image = enterpriseData, command=configurationView2, font =('Helvetica', 14))
-    config2BtnMenu.pack(side = TOP, pady = 65) 
+    config2BtnMenu.pack(side = TOP, pady = 55) 
     
     window.mainloop()
     
