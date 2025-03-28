@@ -385,7 +385,6 @@ def showData(): #Mostrar reusltados generados
          cliente = row[3]
          table.insert('', 'end', value = (idOrden, fechaSolicitud, total, cliente))
 
-
 def createWindow():
     global window, table, searchText, customerDetailView, descText, priceText, qtText, cal, detailTable, m, m2
     #Inicia componentes

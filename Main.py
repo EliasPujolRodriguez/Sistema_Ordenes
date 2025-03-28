@@ -1,7 +1,8 @@
 from Connection import Connection
-import RegisterForm as RegisterForm
-import UserRegister as UserRegister
-import Login as Login
+import RegisterForm 
+import UserRegister 
+import Login 
+
 
 #Instancia de clase conexión
 conn = Connection("root", "localhost", "", "muebles", "3306")
