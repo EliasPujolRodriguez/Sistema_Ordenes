@@ -61,18 +61,22 @@ def createWindow():
     window.title("Login - Inicio de sesión usuario")
     window.geometry("500x400")
     setWindow(window)
+    frame = tk.Frame(window, bg='#2A2A2A')
+    frame.place(relwidth=1, relheight=1)
+    loginIcon = PhotoImage(file = r"..\Sistema python\Resources\Icons\login.png", master=window) 
     #Componentes gráficos formulario subida información
-    Label(window, text = 'Inicie sesión con sus datos para acceder al sistema').pack(side = TOP, pady = 10) 
+    Label(window, text = 'Inicie sesión con sus datos para acceder al sistema', fg='White', bg='#2A2A2A', font =('Helvetica', 14)).pack(side = TOP, pady = 10) 
     
-    Label(window, text = 'Nombre de usuario').pack(side = TOP, pady = 15) 
+    Label(window, text = 'Nombre de usuario', fg='White', bg='#2A2A2A', font =('Helvetica', 12)).pack(side = TOP, pady = 15) 
     username_entry = tk.Entry(window, font=('calibre',10,'normal'))
     username_entry.pack(side = TOP, pady = 18) 
     
-    Label(window, text = 'Contraseña').pack(side = TOP, pady = 20) 
+    Label(window, text = 'Contraseña', fg='White', bg='#2A2A2A', font =('Helvetica', 12)).pack(side = TOP, pady = 20) 
     password_entry = tk.Entry(window, show="*")  # Show asterisks for password
     password_entry.pack(side = TOP, pady = 25) 
     
-    save_button = tk.Button(window, text="Guardar datos", command=storeData)
+    save_button = tk.Button(window, text="Iniciar sesión", command=storeData, relief="flat", borderwidth=0, fg='White', bg='#2E5EA0', 
+                activebackground='White', compound="left", justify="left", image = loginIcon, font =('Helvetica', 10))
     save_button.pack(side = TOP, pady = 26) 
     
     window.resizable(0, 0) 
