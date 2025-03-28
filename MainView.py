@@ -84,23 +84,27 @@ def createWindow():
     iconAddCustomer = PhotoImage(file = r"..\Sistema python\Resources\Icons\add_customer.png", master=window) 
     iconAddOrder = PhotoImage(file = r"..\Sistema python\Resources\Icons\add_order.png", master=window) 
     iconConfig = PhotoImage(file = r"..\Sistema python\Resources\Icons\refresh.png", master=window) 
+    iconUpdateProfile = PhotoImage(file = r"..\Sistema python\Resources\Icons\config.png", master=window) 
+    enterpriseData = PhotoImage(file = r"..\Sistema python\Resources\Icons\enterprise_data.png", master=window) 
 
-    customerBtnMenu = tk.Button(window, text=" Registrar nuevo cliente", fg='White', bg='#2E5EA0', 
+    customerBtnMenu = tk.Button(window, relief="flat", borderwidth=0, text=" Registrar nuevo cliente", fg='White', bg='#2E5EA0', 
                 activebackground='White', compound="left", justify="left", image = iconAddCustomer, command=customersView, font =('Helvetica', 14))
     customerBtnMenu.pack(side = TOP, pady = 45) 
     
-    orderViewBtnMenu = tk.Button(window, text=" Registrar orden de trabajo", fg='White', bg='#2E5EA0', 
+    orderViewBtnMenu = tk.Button(window, relief="flat", borderwidth=0, text=" Registrar orden de trabajo", fg='White', bg='#2E5EA0', 
                 activebackground='White', compound="left", justify="left", image = iconAddOrder, command=orderView, font =('Helvetica', 14))
     orderViewBtnMenu.pack(side = TOP, pady = 50) 
     
-    updBtnMenu = tk.Button(window, text=" Actualizar sistema",  fg='White', bg='#2E5EA0', 
+    updBtnMenu = tk.Button(window, relief="flat", borderwidth=0, text=" Actualizar sistema",  fg='White', bg='#2E5EA0', 
                 activebackground='White', compound="left", justify="left", image = iconConfig, command=updSystem, font =('Helvetica', 14))
     updBtnMenu.pack(side = TOP, pady = 55) 
     
-    config1BtnMenu = tk.Button(window, text="Editar perfil usuario", command=configurationView)
+    config1BtnMenu = tk.Button(window, relief="flat", borderwidth=0, text=" Editar perfil usuario", fg='White', bg='#2E5EA0', 
+                activebackground='White', compound="left", justify="left", image = iconUpdateProfile, command=configurationView, font =('Helvetica', 14) )
     config1BtnMenu.pack(side = TOP, pady = 60) 
     
-    config2BtnMenu = tk.Button(window, text="Configuración general sistema", command=configurationView2)
+    config2BtnMenu = tk.Button(window, relief="flat", borderwidth=0, text=" Editar datos empresa", fg='White', bg='#2E5EA0', 
+                activebackground='White', compound="left", justify="left", image = enterpriseData, command=configurationView2, font =('Helvetica', 14))
     config2BtnMenu.pack(side = TOP, pady = 65) 
     
     window.mainloop()
