@@ -3,7 +3,6 @@ import RegisterForm
 import UserRegister 
 import Login 
 
-
 #Instancia de clase conexión
 conn = Connection("root", "localhost", "", "muebles", "3306")
 query = conn.dbConnect().cursor()
