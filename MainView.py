@@ -70,7 +70,7 @@ def createWindow():
     configMenu.add_command(label="Editar Perfil usuario", command=configurationView)
     configMenu.add_command(label="Configuración datos empresa", command=configurationView2)
     logoutMenu = Menu(menubar, tearoff=0) 
-    logoutMenu.add_command(label="Salir del sistema", command=logout)
+    logoutMenu.add_command(label="Salir del programa", command=logout)
     
     menubar.add_cascade(label="Clientes", menu=customerseMenu)
     menubar.add_cascade(label="Configuración", menu=configMenu)
