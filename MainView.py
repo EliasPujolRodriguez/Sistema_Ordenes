@@ -1,5 +1,6 @@
 from Connection import Connection
 import tkinter as tk
+from tkinter import ttk as ttk
 from tkinter import messagebox
 from tkinter import * 
 from tkinter import filedialog
@@ -56,6 +57,9 @@ def createWindow():
     #window.geometry("500x400")
     setWindow(window)
     
+    frame = tk.Frame(window, bg='#2A2A2A')
+    frame.place(relwidth=1, relheight=1)
+    
     menubar = Menu(window)
     window.config(menu=menubar)  # Creación de componente menú
     #Submenús
@@ -73,10 +77,11 @@ def createWindow():
     menubar.add_cascade(label="Configuración", menu=configMenu)
     menubar.add_cascade(label="Cerrar sesión", menu=logoutMenu)
 
-    #Componentes gráficos formulario subida información
-    Label(window, text = 'Apartado principal').pack(side = TOP, pady = 10) 
+    #Componentes gráficos formulario
+    Label(window, text = 'Apartado principal', bg='#2A2A2A', fg="white", font=("Helvetica", 16) ).pack(side = TOP, pady = 10) 
     
-    customerBtnMenu = tk.Button(window, text="Clientes - Registrar nuevo cliente", command=customersView)
+    customerBtnMenu = tk.Button(window, text="Registrar nuevo cliente", fg='White', bg='#2E5EA0', 
+                activebackground='White', command=customersView, font =('Verdana', 12))
     customerBtnMenu.pack(side = TOP, pady = 45) 
     
     orderViewBtnMenu = tk.Button(window, text="Clientes - Registro de ordenes", command=orderView)
